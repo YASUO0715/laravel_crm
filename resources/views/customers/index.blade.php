@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>auction index</title>
+    <title>customer index</title>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 
@@ -26,7 +26,7 @@
 
                     <table border='1'>
                         <tr>
-                            
+
                             <td><a href="/customers/{{ $customer->id }}">{{ $customer->id }}</a></td>
                             <td class="cell2">{{ $customer->name }}</td>
                             <td class="cell3">{{ $customer->email }}</td>
@@ -39,9 +39,7 @@
 
         @endforeach
     </ul>
-
-    <button><a href="/planets/create">新規登録</a></button>
-
+<button type=“button” onclick="location.href='/customers/create'">新規登録</button>
 
 </body>
 

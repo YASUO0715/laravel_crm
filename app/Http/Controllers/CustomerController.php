@@ -27,7 +27,12 @@ class CustomerController extends Controller
      */
     public function create()
     {
-        //
+        return view('customers.create');
+    }
+
+    public function address()
+    {
+        return view('customers.address');
     }
 
     // /**
@@ -62,7 +67,8 @@ class CustomerController extends Controller
      */
     public function edit($id)
     {
-        //
+        $customer = customer::find($id);
+        return view('customers.edit', ['customer' => $customer]);
     }
 
     /**
@@ -74,7 +80,20 @@ class CustomerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $customer = customer::find($id);
+
+        // 値の用意
+        $customer->name = $request->name;
+        $customer->email = $request->email;
+        $customer->zipcode = $request->zipcode;
+        $customer->address = $request->address;
+        $customer->phoneNumber = $request->phoneNumber;
+
+        // 保存
+        $customer->save();
+
+        // 登録したらindexに戻る
+        return redirect('/customers');
     }
 
     /**
@@ -85,6 +104,9 @@ class CustomerController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $customer = customer::find($id);
+        $customer->delete();
+
+        return redirect('/customers');
     }
 }

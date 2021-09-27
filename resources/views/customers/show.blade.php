@@ -32,13 +32,13 @@
         </tr>
     </table>
     <div class="button-group button">
-        <button><a href="/customers/{{ $customer->id }}/edit">編集画面</a></button>
+        <button type="button" onclick="location.href='/customers/{{ $customer->id }}/edit'">編集画面</button>
         <form action="/customers/{{ $customer->id }}" method="post">
             @csrf
             @method('DELETE')
             <input type="submit" value="削除する" onclick="if(!confirm('削除しますか？')){return false};">
             <br>
-            <button><a href="/customers">一覧に戻る</a></button>
+            <button type=“button” onclick="location.href='/customers'">一覧に戻る</button>
     </div>
 </body>
 
