@@ -29,22 +29,25 @@
             <label for="name">名前 <input type="text" name="name" value="{{ old('name') }}"></label>
         </p>
         <p>
-            <label for="email">メールアドレス <input type="text" name="email"
-                    value="{{ old('email') }}"></label>
+            <label for="email">メールアドレス <input type="text" name="email" value="{{ old('email') }}"></label>
         </p>
         <p>
-            <label for="zipcode">郵便番号 <input type="number" name="zipcode" value="{{ old('radius') }}"></label>
+            <label for="zipcode">郵便番号 <input type="number" name="zipcode"
+                    value="{{ old('zipcode', $zipcode) }}"></label>
         </p>
         <p>
-            <label for="address">住所 <input type="text" name="address" value="{{ old('weight') }}"></label>
+            <label for="address">住所 <input type="text" name="address"
+                    value="{{ old('address', $address1.$address2.$address3) }}"></label>
         </p>
         <p>
-            <label for="phoneNumber">電話番号 <input type="text" name="phoneNumber" value="{{ old('weight') }}"></label>
+            <label for="phoneNumber">電話番号 <input type="text" name="phoneNumber"
+                    value="{{ old('phoneNumber') }}"></label>
         </p>
 
+        {{-- <input type="submit" value="登録"> --}}
         <input type="submit" value="登録">
-        <button type=“button” onclick="location.href='/customers/create'">郵便番号検索に戻る</button>
     </form>
+    <button type=“button” onclick="location.href='/customers/create'">郵便番号検索に戻る</button>
 </body>
 
 </html>

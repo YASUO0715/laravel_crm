@@ -23,11 +23,11 @@
         </div>
     @endif
     <h1>郵便番号検索画面</h1>
-    @csrf
-    <p>
-        <label for="name">郵便番号検索 <input type="text" name="name" placeholder="検索したい郵便番号">
-            <button type=“button” onclick="location.href='/customers/address'">検索</button>
-    </p>
+    <form action="/customers/search" method="get">
+        <p>
+            <label for="name">郵便番号検索 </label><input type="text" name="name" placeholder="検索したい郵便番号">
+            <input type="submit" value="検索">
+        </p>
     </form>
     <button type=“button” onclick="location.href='/customers'">一覧に戻る</button>
 

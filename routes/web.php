@@ -1,6 +1,9 @@
 <?php
 
+use Illuminate\Contracts\Console\Application;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +20,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/customers/search', [
+    App\Http\Controllers\CustomerController::class, 'write1'
+]);
+
+// Route::post('/customers/address', [App\Http\Controllers\CustomerController::class, 'address']);
+
+
 Route::resource('/customers', App\Http\Controllers\CustomerController::class);
-
-
