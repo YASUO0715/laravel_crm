@@ -30,12 +30,12 @@ class CustomerController extends Controller
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    // /**
+    //  * Store a newly created resource in storage.
+    //  *
+    //  * @param  \Illuminate\Http\Request  $request
+    //  * @return \Illuminate\Http\Response
+    //  */
     public function store(Request $request)
     {
         //
@@ -49,7 +49,9 @@ class CustomerController extends Controller
      */
     public function show($id)
     {
-        //
+        $customer = Customer::find($id);
+        // Itemsティレクトリーの中のindexページを指定し、itemsの連想配列を代入
+        return view('customers.show', ['customer' => $customer]);
     }
 
     /**

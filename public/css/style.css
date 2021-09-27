@@ -17,8 +17,10 @@ label {
 button-group {
     display: flex;
 }
-.button-group button {
+.button-group {
     margin-right: 10px;
+    padding-top: 0px;
+    margin-top: 0px;
 }
 
 .error {
