@@ -20,8 +20,8 @@
             <th>住所</th>
             <th>電話番号</th>
         </tr>
-    </table>
-    <table border='1'>
+        {{-- </table>
+    <table border='1'> --}}
         <tr>
             <td class="cell1">{{ $customer->id }}</td>
             <td class="cell2">{{ $customer->name }}</td>

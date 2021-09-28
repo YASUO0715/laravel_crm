@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>auction edit</title>
+    <title>customer edit</title>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 
@@ -16,7 +16,7 @@
                 <b>{{ count($errors) }}件のエラーがあります。</b>
             </p>
             <ul>
-                @foreach($errors->all() as $error)
+                @foreach ($errors->all() as $error)
                     <li>{{ $error }}</li>
                 @endforeach
             </ul>
@@ -34,16 +34,20 @@
             <label for="name">名前 <input type="string" name="name" value="{{ old('name', $customer->name) }}"></label>
         </p>
         <p>
-            <label for="email">メールアドレス <input type="text" name="email" value="{{ old('email',$customer->email) }}"></label>
+            <label for="email">メールアドレス <input type="text" name="email"
+                    value="{{ old('email', $customer->email) }}"></label>
         </p>
         <p>
-            <label for="zipcode">郵便番号 <input type="number" name="zipcode" value="{{ old('zipcode',$customer->zipcode) }}"></label>
+            <label for="zipcode">郵便番号 <input type="number" name="zipcode"
+                    value="{{ old('zipcode', $customer->zipcode) }}"></label>
         </p>
         <p>
-            <label for="address">住所 <input type="text" name="address" value="{{ old('address',$customer->address) }}"></label>
+            <label for="address">住所 <input type="text" name="address"
+                    value="{{ old('address', $customer->address) }}"></label>
         </p>
         <p>
-            <label for="phoneNumber">電話番号 <input type="string" name="phoneNumber" value="{{ old('phoneNumber',$customer->phoneNumber) }}"></label>
+            <label for="phoneNumber">電話番号 <input type="string" name="phoneNumber"
+                    value="{{ old('phoneNumber', $customer->phoneNumber) }}"></label>
         </p>
         <input type="submit" value="更新">
         <p><b><a href="/customers">戻る</a></b></p>

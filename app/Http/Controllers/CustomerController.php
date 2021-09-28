@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Customer;
 use Illuminate\Http\Request;
+use App\Http\Requests\CustomerRequest;
+
 use GuzzleHttp\Client;
 
 
@@ -37,7 +39,7 @@ class CustomerController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CustomerRequest $request)
     {
         // インスタンスの作成
         $customer = new Customer;
@@ -86,7 +88,7 @@ class CustomerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CustomerRequest $request, $id)
     {
         $customer = customer::find($id);
 
@@ -138,7 +140,7 @@ class CustomerController extends Controller
             $address1 = $customers->results[0]->address1;
             $address2 = $customers->results[0]->address2;
             $address3 = $customers->results[0]->address3;
-            
+
             $data = [
                 'zipcode' => $zipcode,
                 'address1' => $address1,
@@ -158,8 +160,6 @@ class CustomerController extends Controller
 
             ];
         }
-        // return view('/customers.address', $data, $address1, $address2, $address3);
-        // return view('/customers.address', $data);
         return view('/customers.address', $data);
     }
 }

@@ -12,34 +12,35 @@
 <body>
     <h1>顧客一覧</h1>
     <ul>
-        <div class="big_table">
-            <table border="1">
+
+        <table border="1">
+            <tr>
+                <th>顧客ID</th>
+                <th>名前</th>
+                <th>メールアドレス</th>
+                <th>郵便番号</th>
+                <th>住所</th>
+                <th>電話番号</th>
+            </tr>
+            @foreach ($customers as $customer)
+
+
                 <tr>
-                    <th>顧客ID</th>
-                    <th>名前</th>
-                    <th>メールアドレス</th>
-                    <th>郵便番号</th>
-                    <th>住所</th>
-                    <th>電話番号</th>
+
+                    <td><a href="/customers/{{ $customer->id }}">{{ $customer->id }}</a></td>
+                    <td class="cell2">{{ $customer->name }}</td>
+                    <td class="cell3">{{ $customer->email }}</td>
+                    <td class="cell4">{{ $customer->zipcode }}</td>
+                    <td class="cell5">{{ $customer->address }}</td>
+                    <td class="cell6">{{ $customer->phoneNumber }}</td>
                 </tr>
-                @foreach ($customers as $customer)
+            @endforeach
+        </table>
 
-                    <table border='1'>
-                        <tr>
 
-                            <td><a href="/customers/{{ $customer->id }}">{{ $customer->id }}</a></td>
-                            <td class="cell2">{{ $customer->name }}</td>
-                            <td class="cell3">{{ $customer->email }}</td>
-                            <td class="cell4">{{ $customer->zipcode }}</td>
-                            <td class="cell5">{{ $customer->address }}</td>
-                            <td class="cell6">{{ $customer->phoneNumber }}</td>
-                        </tr>
-                    </table>
-        </div>
 
-        @endforeach
     </ul>
-<button type=“button” onclick="location.href='/customers/create'">新規登録</button>
+    <button type=“button” onclick="location.href='/customers/create'">新規登録</button>
 
 </body>
 
