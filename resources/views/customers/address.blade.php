@@ -37,7 +37,7 @@
         </p>
         <p>
             <label for="address">住所 <input type="text" name="address"
-                    value="{{ old('address', $address1.$address2.$address3) }}"></label>
+                    value="{{ old('address', $address1 . $address2 . $address3) }}"></label>
         </p>
         <p>
             <label for="phoneNumber">電話番号 <input type="text" name="phoneNumber"
