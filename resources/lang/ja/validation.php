@@ -147,11 +147,11 @@ return [
     */
 
     'attributes' => [
-'name' =>'名前',
-'email'  =>'メールアドレス',
-'zipcode' =>'郵便番号',
-'address' =>'住所',
-'phoneNumber' =>'電話番号'
+        'name' => '名前',
+        'email'  => 'メールアドレス',
+        'zipcode' => '郵便番号',
+        'address' => '住所',
+        'phoneNumber' => '電話番号'
     ],
 
 ];

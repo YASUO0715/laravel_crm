@@ -20,15 +20,14 @@
             <th>住所</th>
             <th>電話番号</th>
         </tr>
-        {{-- </table>
-    <table border='1'> --}}
+
         <tr>
             <td class="cell1">{{ $customer->id }}</td>
             <td class="cell2">{{ $customer->name }}</td>
             <td class="cell3">{{ $customer->email }}</td>
             <td class="cell4">{{ $customer->zipcode }}</td>
             <td class="cell5">{{ $customer->address }}</td>
-            <td class="cell6">{{ $customer->phoneNumber }}</td>
+            <td class="cell6">{{ $customer->phone_number }}</td>
         </tr>
     </table>
     <div class="button-group button">

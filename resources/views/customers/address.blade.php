@@ -32,16 +32,15 @@
             <label for="email">メールアドレス <input type="text" name="email" value="{{ old('email') }}"></label>
         </p>
         <p>
-            <label for="zipcode">郵便番号 <input type="number" name="zipcode"
+            <label for="zipcode">郵便番号 <input type="text" name="zipcode"
                     value="{{ old('zipcode', $zipcode) }}"></label>
         </p>
         <p>
-            <label for="address">住所 <input type="text" name="address"
-                    value="{{ old('address', $address1 . $address2 . $address3) }}"></label>
+            <label for="address">住所 <input type="text" name="address" value="{{ old('address', $address) }}"></label>
         </p>
         <p>
-            <label for="phoneNumber">電話番号 <input type="text" name="phoneNumber"
-                    value="{{ old('phoneNumber') }}"></label>
+            <label for="phone_number">電話番号 <input type="text" name="phone_number"
+                    value="{{ old('phone_number') }}"></label>
         </p>
 
         {{-- <input type="submit" value="登録"> --}}

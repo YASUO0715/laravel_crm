@@ -19,7 +19,7 @@ class CustomerController extends Controller
     public function index()
     {
         $customers = Customer::all();
-        // Itemsティレクトリーの中のindexページを指定し、itemsの連想配列を代入
+
         return view('customers.index', ['customers' => $customers]);
     }
 
@@ -48,7 +48,7 @@ class CustomerController extends Controller
         $customer->email = $request->email;
         $customer->zipcode = $request->zipcode;
         $customer->address = $request->address;
-        $customer->phoneNumber = $request->phoneNumber;
+        $customer->phone_number = $request->phone_number;
 
 
         $customer->save();
@@ -65,7 +65,7 @@ class CustomerController extends Controller
     public function show($id)
     {
         $customer = Customer::find($id);
-        // Itemsティレクトリーの中のindexページを指定し、itemsの連想配列を代入
+
         return view('customers.show', ['customer' => $customer]);
     }
 
@@ -97,7 +97,7 @@ class CustomerController extends Controller
         $customer->email = $request->email;
         $customer->zipcode = $request->zipcode;
         $customer->address = $request->address;
-        $customer->phoneNumber = $request->phoneNumber;
+        $customer->phone_number = $request->phone_number;
 
         // 保存
         $customer->save();
@@ -130,22 +130,21 @@ class CustomerController extends Controller
 
         $client = new Client();
 
+
         try {
             $response = $client->request($method, $url, $options);
             $body = $response->getBody();
             $customers = json_decode($body, false);
-            // dd($customers);
+
 
             $zipcode = $customers->results[0]->zipcode;
-            $address1 = $customers->results[0]->address1;
-            $address2 = $customers->results[0]->address2;
-            $address3 = $customers->results[0]->address3;
+            $address = $customers->results[0]->address1 . $customers->results[0]->address2 . $customers->results[0]->address3;
+
 
             $data = [
                 'zipcode' => $zipcode,
-                'address1' => $address1,
-                'address2' => $address2,
-                'address3' => $address3,
+                'address' => $address,
+
             ];
 
             // return view('/customers.address', $data);
@@ -154,9 +153,8 @@ class CustomerController extends Controller
             $customers = null;
             $data = [
                 'zipcode' => null,
-                'address1' => null,
-                'address2' => null,
-                'address3' => null,
+                'address' => null,
+
 
             ];
         }

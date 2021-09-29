@@ -32,7 +32,7 @@
                     <td class="cell3">{{ $customer->email }}</td>
                     <td class="cell4">{{ $customer->zipcode }}</td>
                     <td class="cell5">{{ $customer->address }}</td>
-                    <td class="cell6">{{ $customer->phoneNumber }}</td>
+                    <td class="cell6">{{ $customer->phone_number }}</td>
                 </tr>
             @endforeach
         </table>

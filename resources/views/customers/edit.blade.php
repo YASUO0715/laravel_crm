@@ -28,8 +28,8 @@
         @csrf
         <!-- formタグはPUTやDELETEをサポートしていないため、@ methodで指定する必要がある -->
         @method('PATCH')
-        <!-- idはそのまま -->
-        <input type="hidden" name="id" value="{{ $customer->id }}">
+
+
         <p>
             <label for="name">名前 <input type="string" name="name" value="{{ old('name', $customer->name) }}"></label>
         </p>
@@ -46,8 +46,8 @@
                     value="{{ old('address', $customer->address) }}"></label>
         </p>
         <p>
-            <label for="phoneNumber">電話番号 <input type="string" name="phoneNumber"
-                    value="{{ old('phoneNumber', $customer->phoneNumber) }}"></label>
+            <label for="phone_number">電話番号 <input type="string" name="phone_number"
+                    value="{{ old('phone_number', $customer->phone_number) }}"></label>
         </p>
         <input type="submit" value="更新">
         <p><b><a href="/customers">戻る</a></b></p>
